@@ -10,7 +10,7 @@ import spacy
 
 
 # Summarization Model
-@st.cache(allow_output_mutation = True)
+@st.cache_data
 def summary_long_t5(text):
     summarizer = pipeline(
         "summarization",
@@ -148,7 +148,7 @@ if input_pdf is not None:
 
 
     # Summarization Model
-    df["Summary"] = df["Body"].apply(summary_long_t5)
+    #df["Summary"] = df["Body"].apply(summary_long_t5)
 
     final_csv = df.to_csv()
      
