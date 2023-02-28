@@ -148,7 +148,7 @@ if input_pdf is not None:
 
 
     # Summarization Model
-    #df["Summary"] = df["Body"].apply(summary_long_t5)
+    df["Summary"] = df["Body"].apply(summary_long_t5)
 
     final_csv = df.to_csv()
      
