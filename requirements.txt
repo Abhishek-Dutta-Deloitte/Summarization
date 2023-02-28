@@ -1,0 +1,9 @@
+base64
+fitz
+PyPDF2
+re
+pandas
+torch
+transformers
+spacy
+streamlit
