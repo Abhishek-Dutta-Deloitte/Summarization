@@ -1,6 +1,5 @@
 fitz
 PyPDF2
-re
 pandas
 torch
 transformers
