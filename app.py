@@ -146,10 +146,9 @@ if input_pdf is not None:
     # NER Model Implementation
     df["Body"] = df["Body"].apply(NER)
 
- #AFT-267142
 
     # Summarization Model
-    #df["Summary"] = df["Body"].apply(summary_long_t5)
+    df["Summary"] = df["Body"].apply(summary_long_t5)
 
     final_csv = df.to_csv()
      
