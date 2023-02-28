@@ -1,7 +1,7 @@
 import streamlit as st
 import base64
 import fitz
-from PyPDF2 import PdfFileReader
+from PyPDF2 import PdfReader
 import re
 import pandas as pd
 import torch
@@ -56,7 +56,7 @@ if input_pdf is not None:
     # open the file
     pdf_file = fitz.open(path)
     file = open(path, 'rb')
-    pdf_reader = PdfFileReader(file)
+    pdf_reader = PdfReader(file)
 
     ########## Finding the actual start of the page #############
 
@@ -146,9 +146,10 @@ if input_pdf is not None:
     # NER Model Implementation
     df["Body"] = df["Body"].apply(NER)
 
+ #AFT-267142
 
     # Summarization Model
-    df["Summary"] = df["Body"].apply(summary_long_t5)
+    #df["Summary"] = df["Body"].apply(summary_long_t5)
 
     final_csv = df.to_csv()
      
